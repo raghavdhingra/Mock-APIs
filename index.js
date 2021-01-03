@@ -57,6 +57,42 @@ const worker = setupWorker([
       })
     );
   }),
+  rest.get("/api/v1/user", (req, res, ctx) => {
+    // Authorization token in the headers (Important)
+
+    return res(
+      ctx.json({
+        user: {
+          email: "admin@raghavdhingra.com",
+          first_name: "Raghav Dhingra",
+          username: "admin@raghavdhingra.com",
+        },
+        details: {
+          user: 1,
+          phone_number: 9876543210,
+          email: "admin@raghavdhingra.com",
+          is_email_confirmed: true,
+          profile_picture:
+            "https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png",
+          method: 0,
+          payment_id: "f5ds4fdsfdsf",
+          is_payment_done: true,
+          time: "5 hours",
+          grade: 2,
+          subjects: [1, 2, 3],
+          roomIds: [1, 2, 3],
+          device_id: "fdsf564sdf56sdf5s1df5sd56",
+          credits_have: 50.25,
+          referral_code: "HSJ551",
+          referred_by: "UUS566",
+          number_of_referral: 5,
+          referral_credits: 20.65,
+          validity_in_days: 21,
+        },
+        role_id: 0,
+      })
+    );
+  }),
 ]);
 
 worker.start();
